@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28w0 115" width="28w0px" height="115px">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@900&amp;display=swap');
+      
+      .logo-text {
+        font-family: 'Sour Gummy', sans-serif;
+        font-weight: 900;
+        font-size: 50pt;
+        text-anchor: middle;
+      }
+    </style>
+
+    <linearGradient id="slackle-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fe89d9" />
+      <stop offset="100%" stop-color="#8e6bff" />
+    </linearGradient>
+
+    <filter id="glow-blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+    </filter>
+  </defs>
+
+  <text x="140" y="80" fill="url(#slackle-grad)" filter="url(#glow-blur)" class="logo-text">
+    Slackle
+  </text>
+
+  <text x="140" y="80" fill="url(#slackle-grad)" class="logo-text">
+    Slackle
+  </text>
+</svg>

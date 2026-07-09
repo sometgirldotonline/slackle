@@ -15,12 +15,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body style="background-color: #dae8ff;">
+    <div class="circle">
+        <img class="l" src="/logo.png" alt="">
+        <div class="rows1"></div>
+        <div class="rows2"></div>
+        <div class="rows3"></div>
+        <span class="getyours">Get yours at https://slackle.sometgirl.online</span>
+    </div>
     <span class="logo">Slackle</span>
-    <p class="t-center t-md">Account Connected! Grabbing info!</p>
-    <progress id="c-progress"></progress><br>
-    <span id="c-prog-count">?? / ?? Channels processed</span>
-    <script src="script.js"></script>
+    <div class="grabbing">
+        <p class="t-center t-md">Account Connected! Grabbing info!</p>
+        <progress id="c-progress"></progress><br>
+        <span id="c-prog-count">?? / ?? Channels processed</span>
+    </div>
+    <div class="main" style="display: none;">
+        <br><br><br>
+        <h1>Done!</h1>
+        <p>Here's your Slackle!</p>
+        <div class="ch"></div>
+        <div class="buttons" style="display: none;"><button class="cta-c-slack" onclick="copycanvastoclip()">Copy to clipboard</button><button class="cta-c-slack" onclick="dlcanvas()">Download</button></div>
+
+    </div>
 </body>
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script src="/cb/script.js"></script>
 
 </html>

@@ -5,7 +5,11 @@ html {
     background-color: #dae8ff;
     overflow-x: hidden;
 }
+*{
+    --csize: 700px;
+    --csize2: calc( var(--csize) / 2);
 
+}
 body {
     width: calc(100vw - 20px);
     margin: 0px;
@@ -23,13 +27,14 @@ body {
 .logo {
     font-family: "Sour Gummy", sans-serif;
     font-weight: 900;
-    font-size: 10vw;
+    font-size: min(10vw, 50pt);
     text-align: center;
     width: calc(100vw - 20px);
     display: block;
     color: transparent;
     background-clip: text;
     background-image: linear-gradient(90deg, #fe89d9, #8e6bff);
+    position: absolute;
     z-index: 2;
 
     &:after {
@@ -69,4 +74,108 @@ body {
         margin: 0;
         border-width: 5px;
     }
+}
+
+.circle{
+    width: var(--csize) !important;
+    height: var(--csize) !important;
+  display: grid;
+  place-items: center;      /* Centers items vertically and horizontally */
+  position: absolute;
+  top: -1000px;
+  left: var(--csize2);
+  background-color: #dae8ff;
+  /* display: none; */
+}
+.circle > * {
+  grid-area: 1 / 1;  
+  margin-left: -25px;
+}
+
+.circle .ourUser{
+    height: 10ch;
+    width: 10ch;
+    position: relative;
+    top:10px;
+    /* margin-left: -1.5ch; */
+}
+.circle .row1{
+    height: 8ch;
+    width: 8ch;
+    /* position: absolute; */
+}
+/* .row1.rpos0{
+    left: calc(50% - 4ch);
+    top: calc(8ch + 3ch);
+}
+.row1.rpos1{
+    left: calc(50% + 5ch);
+    top: calc(12ch + 3ch);
+}
+.row1.rpos2{
+    left: calc(50% + 5ch);
+    top: calc(12ch + 3ch + 9ch);
+}
+.row1.rpos3{
+    left: calc(50% + 4ch);
+    top: calc(12ch + 3ch + 18ch);
+} */
+.circle .row2{
+    height: 5ch;
+    width: 5ch;
+}
+.circle .row3{
+    height: 3ch;
+    height: 3ch;
+}
+.circle img:not(.l){
+    border-radius: 100%;
+}
+.l{
+    position: absolute;
+    height: 55px;
+    top:5px;
+}
+.rows1{
+    position: absolute;
+    width: var(--csize);
+    height: var(--csize);
+    top:10px;
+    left:0px;
+    overflow: hidden;
+}
+.rows2{
+    position: absolute;
+    top:10px;
+    left:0px;
+    width: var(--csize);
+    height: var(--csize);
+    overflow: hidden;
+}
+.rows3{
+    position: absolute;
+    top:10px;
+    left:0px;
+    width: var(--csize);
+    height: var(--csize);
+    overflow: hidden;
+}
+.getyours{
+    position: absolute;
+    text-align: right;
+    right:10px;
+    bottom: 10px;
+    vertical-align: bottom;
+}
+.balls{
+    border: 4px solid #f3bbe7;
+    scale: 0.8;
+    margin-top: -70px;
+}
+h1,p{
+    margin-block-end:10px !important;
+    margin-block-start:10px;
+}
+.buttons{
+    margin-top:-70px;
 }
