@@ -58,7 +58,6 @@ async function getUserInfo(id) {
             }
         });
         const resp = await response.json();
-        console.log(resp)
 
         userCache[id] = {
             data: resp,
@@ -146,7 +145,6 @@ async function start() {
         for (userId of Object.keys(rowCounts.row1)) {
             let u = document.createElement("img")
             let ud = (await getUserInfo(userId)).user;
-            console.log(ud)
             u.src = ud.profile.image_512.replace("avatars.slack-edge.com", "slackle-auth.novafurry.workers.dev/av").replace("secure.gravatar.com", "slackle-auth.novafurry.workers.dev")
             u.classList.add("row1")
             u.classList.add("rpos" + co)
@@ -160,7 +158,6 @@ async function start() {
         for (userId of Object.keys(rowCounts.row2)) {
             let u = document.createElement("img")
             let ud = (await getUserInfo(userId)).user;
-            console.log(ud)
             u.src = ud.profile.image_512.replace("avatars.slack-edge.com", "slackle-auth.novafurry.workers.dev/av").replace("secure.gravatar.com", "slackle-auth.novafurry.workers.dev")
             u.classList.add("row2")
             u.classList.add("rpos" + co)
@@ -175,7 +172,6 @@ async function start() {
         for (userId of Object.keys(rowCounts.row3)) {
             let u = document.createElement("img")
             let ud = (await getUserInfo(userId)).user;
-            console.log(ud)
             u.src = ud.profile.image_512.replace("avatars.slack-edge.com", "slackle-auth.novafurry.workers.dev/av").replace("secure.gravatar.com", "slackle-auth.novafurry.workers.dev")
             u.classList.add("row3")
             u.classList.add("rpos" + co)
