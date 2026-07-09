@@ -50,22 +50,24 @@ async function getUserInfo(id) {
     if (id in userCache && (now - userCache[id].timestamp < 24 * 60 * 60 * 1000)) {
         return userCache[id].data
     }
-    const response = await rateLimitedFetch("https://slackle-auth.novafurry.workers.dev/api/users.info?user=" + id, {
-        method: "GET",
-        headers: {
-            "Authorization": `Bearer ${token}`
-        }
-    });
-    const resp = await response.json();
-    console.log(resp)
+    else {
+        const response = await rateLimitedFetch("https://slackle-auth.novafurry.workers.dev/api/users.info?user=" + id, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        });
+        const resp = await response.json();
+        console.log(resp)
 
-    userCache[id] = {
-        data: resp,
-        timestamp: now
-    };
-    localStorage.setItem("userCache", JSON.stringify(userCache));
+        userCache[id] = {
+            data: resp,
+            timestamp: now
+        };
+        localStorage.setItem("userCache", JSON.stringify(userCache));
 
-    return resp;
+        return resp;
+    }
 }
 
 async function start() {
@@ -214,9 +216,9 @@ start()
 
 async function copycanvastoclip() {
     canvas = document.querySelector("canvas")
-    try{
-        canvas.toBlob(async (blob)=>{
-            data = [new ClipboardItem({[blob.type]: blob})];
+    try {
+        canvas.toBlob(async (blob) => {
+            data = [new ClipboardItem({ [blob.type]: blob })];
             await navigator.clipboard.write(data)
         })
     }
@@ -225,7 +227,7 @@ async function copycanvastoclip() {
 Error: ${e}`)
     }
 }
-function dlcanvas(){
+function dlcanvas() {
     canvas = document.querySelector("canvas")
     img = canvas.toDataURL();
     link = document.createElement("a");
