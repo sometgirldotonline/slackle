@@ -11,3 +11,7 @@ Here's how my slackle looks!
 
 # AI use
 a tiny bit idk
+
+# Colours
+i used colours from this lospec.com colour pallete: [K-Angel's Away Screen](https://lospec.com/palette-list/k-angels-away-screen)
+[![Colour Pallete](palet.png)](https://lospec.com/palette-list/k-angels-away-screen)
